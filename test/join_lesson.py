@@ -1,11 +1,11 @@
-from zoom_joiner.test.addTimetable import GetCurrentSchedule
+from zoom_joiner.test.add_timetable import GetCurrentSchedule
 import webbrowser
 from datetime import datetime
 import time
-from zoom_joiner.test.readLesson import ReadLessons
+from zoom_joiner.test.read_lesson import ReadLessons
 schedule = GetCurrentSchedule()
 
-def OpenLink(lessonName):
+def open_link(lessonName):
     Lessons = ReadLessons()
     for x in range(len(Lessons)):
         for name,link in Lessons[x].items():
@@ -14,15 +14,15 @@ def OpenLink(lessonName):
     webbrowser.open(lessonLink)
     print("Opened link.")
 
-def Sleep(lessonTime,lessonName):
+def sleep(lessonTime,lessonName):
     now = datetime.now()
     currentDate = datetime.now().strftime("%Y-%m-%d ")
     reqTime = datetime.strptime(str(currentDate+lessonTime),"%Y-%m-%d %H:%M:%S")
     timeRemaining = (reqTime-now).seconds
     time.sleep(timeRemaining)
-    OpenLink(lessonName)
+    open_link(lessonName)
     
-def MaintainSchedule():
+def maintain_schedule():
     for x in range(len(schedule)):
         lessonTime = schedule[x].split(',')[0]
         lessonName = schedule[x].split(',')[1]
@@ -34,7 +34,7 @@ def MaintainSchedule():
             print(schedule[x].split(',')[1] + " is over.")
             
         elif now < reqTime:
-            Sleep(lessonTime,lessonName)
+            sleep(lessonTime,lessonName)
         
-
-MaintainSchedule()
+if __name__ == "__main__":
+    maintain_schedule()

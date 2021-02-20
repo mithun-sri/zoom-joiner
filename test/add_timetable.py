@@ -3,7 +3,7 @@ import datetime
 def GetCurrentSchedule():
     today = datetime.datetime.today().weekday()
 
-    f_timetable = open("ZoomJoiner/timetable.txt","r")
+    f_timetable = open("zoom_joiner/timetable.txt","r")
     
     dayCount = -1
     lines = []
@@ -33,7 +33,7 @@ def GetCurrentSchedule():
                 
 def SetTimetable():
     weekdays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-    f_timetable = open("ZoomJoiner/timetable.txt","w")
+    f_timetable = open("zoom_joiner/timetable.txt","w")
     for x in range(0,7):
         f_timetable.write("NewDay\n")
         print("=====" + weekdays[x] + "=====")

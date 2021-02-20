@@ -1,6 +1,6 @@
 import argparse
 import zoom_joiner.test.initialise as initialise
-import zoom_joiner.test.addTimetable as timetable
+import zoom_joiner.test.add_timetable as timetable
 
 def main():
     parser = argparse.ArgumentParser(description="Display all the lessons")

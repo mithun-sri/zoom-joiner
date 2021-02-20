@@ -1,12 +1,12 @@
-from zoom_joiner.test.addLesson import Lesson,AddLesson
+from zoom_joiner.test.add_lesson import add_lesson,Lesson
 
 
 def Initialise():
     try:
-        f_codes = open("ZoomJoiner/codes.txt","a")
+        f_codes = open("zoom_joiner/codes.txt","a")
         f_codes.close()
     except:
-        f_codes = open("ZoomJoiner/codes.txt","w")
+        f_codes = open("zoom_joiner/codes.txt","w")
         f_codes.close()
     
     numLessons = int(input("Enter the number of unique lessons you have: "))
@@ -15,6 +15,6 @@ def Initialise():
         lessonName = input(message)
         message = 'Enter the zoom link for this lesson: '
         lessonLink = input(message)
-        lesson = Lesson(lessonName,lessonLink)
-        AddLesson(lesson)
+        lesson_obj = Lesson(lessonName,lessonLink)
+        add_lesson(lesson_obj)
         print("Lesson added.")

@@ -4,10 +4,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="zoom-joiner-mithun-sri", # Replace with your own username
-    version="1.0",
+    name="zoom-joiner-mithun-sri",
+    version="0.1",
     author="Mithun Sri",
-    author_email="lnsmirth@gmail.com",
+    author_email="mithunsrina@gmail.com",
     description="A package to fetch and join zoom meetings automatically",
     long_description=long_description,
     long_description_content_type="text/markdown",
